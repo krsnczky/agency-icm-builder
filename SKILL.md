@@ -24,7 +24,7 @@ Every workspace this skill builds or audits follows these. In audit mode, each r
 7. **State is rewritten, history is appended.** `hot.md` gets edited in place. `log.md` only grows. Never rewrite history to reflect current state; that is what `hot.md` is for.
 8. **Sessions end in capture.** Work not written back to the client folder did not happen. The capture is agent-driven at session end: log entry, hot update if priorities shifted, learnings append if there was a lesson. If client attribution is uncertain, the note goes to a quarantine inbox for the human to file. Never guess the client.
 9. **Expertise and state live apart.** `departments/` (or `services/`) holds stable know-how: agent instructions and skills that change rarely and apply to every client. `clients/` holds per-client state. `system/` holds workspace infrastructure: policies, the load-order contract, changelogs. A fact that survives every client belongs in a department; a fact about one client never leaves its folder.
-10. **Hand-maintained indexes rot: generate or delete.** Any "map of everything" file that a human must remember to update will go stale and start lying. Either a script rebuilds it, or it should not exist. The routing table in the root file is the one exception, and it stays small enough to notice drift.
+10. **A hand-maintained index that duplicates state will rot: generate it, shrink it, or drop it.** The failure mode is narrow: a file that re-lists state living elsewhere (client rosters, "map of everything" system maps) and relies on a human remembering to update it. That copy drifts and starts lying. Fix it one of three ways: rebuild it from a script, keep it small enough that drift is obvious at a glance (the root routing table is exactly this), or delete it if nothing reads it. Not every index is guilty: an index that holds its own content rather than duplicating state, and a purely presentational file (for example one that only exists to shape a graph view), are not state copies and this rule does not touch them. The question to ask is "does this file restate something whose real home is elsewhere?" Only then is it at risk.
 
 ## Choose a mode
 
@@ -55,7 +55,7 @@ agency/
 
 Rename to their vocabulary (departments/services/pods, wiki/notes, work/deliverables). Names are theirs; the shape is not negotiable.
 
-**3. Scale to their size.** Under 5 clients: skip `workflows/`, collapse departments into a single `playbook/` folder, keep the client triad. The full skeleton earns its weight around 8+ clients or 3+ service lines. Building the full thing for a 2-client freelancer is scaffolding, not architecture; say so.
+**3. Build the full skeleton.** Scaffold the whole shape even for one client. A system runs smoothly when every kind of information already has a home to land in, so set the homes up first and grow into them. Assume the agency will add clients and service lines; the structure should be ready when they do, not retrofitted under load. Create the departments and workflows the agency actually has, even if only one client uses them today.
 
 **4. Fill from templates.** Copy from [assets/templates/](assets/templates/): root CLAUDE.md, client template, department file, workflow file. Write the load-order contract into `system/` naming their actual task types.
 
@@ -73,7 +73,7 @@ Read-only. Never move, edit, or delete during an audit.
 
 - **Payload in the router** (rule 1): root file over ~100 lines, holding protocol text or reference content.
 - **Drifting duplicates** (rule 5): the same fact in two hand-edited homes, already diverged. Diff them and show the divergence; it is the most convincing finding.
-- **Stale maps** (rule 10): an index file with a last-updated date and missing entries. Name what is missing.
+- **Stale maps** (rule 10): an index that duplicates state (a client roster, a system map) with a stale last-updated date and missing entries. Name what is missing. Do not flag an index that carries its own content, or a file that exists only to shape a view (a graph-layout helper) - those are not state copies.
 - **Template drift** (rule 6): count folders real clients grew that the template lacks.
 - **Orphan buckets**: `tmp/`, `docs/`, `misc/` holding one-off files nothing references.
 
@@ -107,7 +107,6 @@ If a step fails, fix the structure, not the explanation: move or split files unt
 
 ## Guardrails
 
-- **Do not over-build.** The ladder: a chat, then a saved prompt, then this. A workspace for an agency of one with two clients is usually premature; recommend the client triad alone (`hot.md`, `log.md`, `learnings.md` in one folder per client) and stop there.
 - **The structure is not the value.** Tell users this honestly: the folders orchestrate, but the quality of what the agent does still comes from the expertise files they write into departments and the discipline of session capture. An empty skeleton does nothing.
 - **Where this loses.** Real-time multi-agent collaboration, many users hitting one workspace concurrently, and pipelines that must branch mid-run without a human. This method is for sequential, human-reviewed, repeatable client work, which is most agency work, but not all of it.
 

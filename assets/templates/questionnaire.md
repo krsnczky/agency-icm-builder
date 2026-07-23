@@ -21,8 +21,8 @@
 - What is different per client? (brand, goals, quirks, state) -> client folders
 - Is there anything you keep re-explaining to new team members? -> that is a file, not a conversation
 
-## Round 4 - scale check
+## Round 4 - setup and growth
 
-- Under 5 clients or solo: recommend the minimal build (client triad only, no departments split, no workflows). Say why: the full skeleton earns its weight at 8+ clients or 3+ service lines.
+- Build the full skeleton regardless of client count. Even at one client it gives every kind of information a home, and it is ready when the agency grows instead of retrofitted under load.
 - Existing folder structure already? -> switch to restructure mode, audit first.
 - Do they use Claude Code specifically? -> enforcement layer is available later, note it, do not build it now.

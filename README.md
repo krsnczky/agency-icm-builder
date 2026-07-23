@@ -35,7 +35,7 @@ Extracted from a real system: these conventions run a marketing agency with 15 c
 
 Three modes:
 
-- **Build** - interviews you about your agency (services, clients, the repeating unit of work, where humans check things), then scaffolds the smallest workspace that carries it. A 2-client freelancer gets three files per client; a 15-client shop gets the full skeleton.
+- **Build** - interviews you about your agency (services, clients, the repeating unit of work, where humans check things), then scaffolds the full skeleton, ready before you grow into it rather than retrofitted under load. One client or fifteen, every kind of information gets a home from day one.
 - **Audit** - checks an existing workspace against ten rules and reports findings with paths, costs, and smallest fixes. Read-only.
 - **Restructure** - audit first, then a migration map for your approval, then migration. Your grown-wild folder usually already contains the structure informally; it gets extracted, not bulldozed.
 
