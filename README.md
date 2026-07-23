@@ -1,8 +1,6 @@
-<!-- banner goes here when ready:
 <p align="center">
-  <img src="assets/banner.png" alt="Agency ICM Builder - folder structure as agent architecture for agencies" width="760">
+  <img src="assets/banner.jpg" alt="Agency ICM Builder - folder structure as agent architecture, shaped to your agency" width="760">
 </p>
--->
 
 <h1 align="center">Agency ICM Builder</h1>
 
