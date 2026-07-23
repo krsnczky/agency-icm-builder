@@ -15,7 +15,6 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Claude-skill-CD5334.svg?style=flat-square" alt="Claude skill">
   <img src="https://img.shields.io/badge/version-1.0-CD5334.svg?style=flat-square" alt="Version 1.0">
-  <img src="https://img.shields.io/badge/battle--tested-15%20clients%20in%20production-brightgreen.svg?style=flat-square" alt="Battle-tested: 15 clients in production">
 </p>
 
 ## Contents
